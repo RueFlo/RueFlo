@@ -1,0 +1,18 @@
+#define MaxdryAnalogValue 1023
+#define MaxwetAnalogValue 0
+
+int SensorPin = A0;
+int sensorValue;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(SensorPin, INPUT);
+}
+
+void loop() {
+  sensorValue = analogRead(SensorPin);
+  Serial.print("Analoger Feuchtigkeitswert: ");
+  Serial.println(sensorValue);
+  delay(1000);
+}
